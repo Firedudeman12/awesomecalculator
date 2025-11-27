@@ -1,7 +1,7 @@
 name: Whl&Build install
 on: 
   workflow_run:
-    workflows: ["build-pipeline"]
+    workflows: ["Awesome Calculator CI build"]
     types: completed
   
 jobs:
