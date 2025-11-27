@@ -16,4 +16,4 @@ jobs:
           
           - name: Install .whl artifact  
             run: |
-              pip install ./downloaded-whl/*.whl 
+              pip install src/dist/*.whl 
