@@ -12,6 +12,7 @@ jobs:
             uses: actions/download-artifact@v4
             with:
                 name: awesome-calculator # The name given when uploading the artifact
+                run-id: ${{ github.event.workflow_run.id }}
                 path: src/dist 
           
           - name: Install .whl artifact  
