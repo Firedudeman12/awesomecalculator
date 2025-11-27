@@ -3,16 +3,17 @@ on:
   workflow_run:
     workflows: ["build-pipeline"]
     types: completed
+  
 jobs:
   download_and_install_whl:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download .whl artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: awesome-calculator # The name given when uploading the artifact
-          path: ./downloaded-whl 
+      runs-on: ubuntu-latest
+      steps:
+          - name: Download .whl artifact
+            uses: actions/download-artifact@v4
+            with:
+                name: awesome-calculator # The name given when uploading the artifact
+                path: ./downloaded-whl 
           
-      - name: Install .whl artifact  
-        run: |
-          pip install ./downloaded-whl/*.whl 
+          - name: Install .whl artifact  
+            run: |
+              pip install ./downloaded-whl/*.whl 
