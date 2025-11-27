@@ -3,7 +3,7 @@ on: push
 jobs:
   download_and_install:
     runs-on: ubuntu-latest
-    needs:  # If the artifact was uploaded in a different job
+    needs: Awesome Calculator CI build  # If the artifact was uploaded in a different job
     steps:
       - name: Download .whl artifact
         uses: actions/download-artifact@v4
