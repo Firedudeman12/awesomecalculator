@@ -1,7 +1,7 @@
 name: Whl&Build install
 on: push
 jobs:
-  download_and_install:
+  download_whl:
     runs-on: ubuntu-latest
     needs: Awesome Calculator CI build  # The Name of the Previous Workflow Job
     steps:
@@ -10,3 +10,6 @@ jobs:
         with:
           name: awesome-calculator # The name given when uploading the artifact
           path: ./downloaded-whl 
+    install_whl:
+        run: |
+          pip install ./downloaded-whl/*.whl 
