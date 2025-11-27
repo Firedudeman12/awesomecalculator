@@ -1,8 +1,9 @@
-
+name: Whl&Build install
+on: push
 jobs:
   download_and_install:
     runs-on: ubuntu-latest
-    needs: [name_of_job_that_uploaded_artifact] # If the artifact was uploaded in a different job
+    needs:  # If the artifact was uploaded in a different job
     steps:
       - name: Download .whl artifact
         uses: actions/download-artifact@v4
